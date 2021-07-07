@@ -1,0 +1,37 @@
+@import '~antd/dist/antd.css';
+
+body {
+  background-color: #292A37; 
+  font-family: 'Oswald', sans-serif;
+  color: white;
+}
+
+
+.ant-menu {
+  font-size: 1rem;
+}
+
+.ant-menu-submenu-popup > .ant-menu {
+  background-color: #383838; 
+}
+  
+// Submenu selected header color
+.ant-menu-item-selected {
+  color: white;
+}
+  
+// Submenu background color
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #242424;;
+}
+  
+// Submenu hover header color
+.ant-menu-light .ant-menu-item:hover, .ant-menu-light .ant-menu-item-active, .ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-light .ant-menu-submenu-active, .ant-menu-light .ant-menu-submenu-title:hover {
+  color: white;
+}
+  
+// Submenu icon color change on header select
+.ant-menu-item-selected .ant-menu-item-icon {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(117deg) brightness(107%) contrast(101%);
+  transition: filter 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}

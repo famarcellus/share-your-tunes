@@ -1,0 +1,49 @@
+.navbar {
+    .ant-menu {
+        background-color: #111111;
+        font-size: 1.2rem;
+    }
+
+    .ant-menu-item {
+        color: #d9d9d9 ;
+    }
+
+    .ant-menu-horizontal {
+        border-bottom: none;
+    }
+
+    // Selected Header color
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+        color: #FFFFFF;
+    }
+
+    // Selected Header Underline color
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected::after {
+        border-bottom: 2px solid #FFFFFF;
+    }
+
+    .ant-menu-overflow {
+        justify-content: center;
+    }
+
+    // Icon color changes with selected header
+    .ant-menu-item-selected > .ant-menu-item-icon, .ant-menu-item-selected .anticon {
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(117deg) brightness(107%) contrast(101%);
+        transition: filter 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+   
+    // .ant-menu-item .ant-menu-item-icon {
+    //     filter: invert(79%) sepia(0%) saturate(0%) hue-rotate(22deg) brightness(93%) contrast(85%);
+    // }
+    
+
+}
+
+@media only screen and (min-width: 554px) {
+
+    .navbar {
+        .ant-menu-overflow > .ant-menu-overflow-item {
+            margin-right: 5%;
+        }
+    }
+}
