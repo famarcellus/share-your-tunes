@@ -13,13 +13,13 @@ function Navbar() {
     return (
         <header className="navbar">
             <Menu onClick={HandleClick} selectedKeys={header.current} mode="horizontal">
-                <Menu.Item key="profile" icon={<ProfileIcon />}>
+                <Menu.Item key="profile" icon={<ProfileIcon />} data-testid="profile">
                     Profile
                 </Menu.Item>
-                <Menu.Item key="home" icon={<HomeIcon />}>
+                <Menu.Item key="home" icon={<HomeIcon />} data-testid="home">
                     Home
                 </Menu.Item>
-                <Menu.Item key="music" icon={<MusicIcon />}>
+                <Menu.Item key="music" icon={<MusicIcon />} data-testid="music">
                     Music
                 </Menu.Item>
             </Menu>
