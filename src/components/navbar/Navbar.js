@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect} from "react";
+import React, { useState } from "react";
 import { Menu } from 'antd';
 import { ProfileIcon, HomeIcon, MusicIcon } from "../../assets/navbar/Icons";
 import "./Navbar.scss";
