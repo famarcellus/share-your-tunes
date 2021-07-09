@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu } from 'antd';
-import { ProfileIcon, HomeIcon, MusicIcon } from "../../assets/navbar/Icons";
+import { ProfileIcon, HomeIcon, MusicIcon, HamburgerIcon } from "../../assets/navbar/Icons";
 import "./Navbar.scss";
 
 function Navbar() {
@@ -10,9 +10,10 @@ function Navbar() {
         setHeader({current: e.key});
     }
 
+    
     return (
         <header className="navbar">
-            <Menu onClick={HandleClick} selectedKeys={header.current} mode="horizontal">
+            <Menu onClick={HandleClick} selectedKeys={header.current} mode="horizontal" overflowedIndicator={<HamburgerIcon />}>
                 <Menu.Item key="profile" icon={<ProfileIcon />} data-testid="profile">
                     Profile
                 </Menu.Item>
