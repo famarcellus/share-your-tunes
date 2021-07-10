@@ -41,44 +41,64 @@ const data = {
         {
             artist: "Drake",
             trackName: "God's Plan",
-            imgSrc: "https://cdns-images.dzcdn.net/images/cover/b69d3bcbd130ad4cc9259de543889e30/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-9.dzcdn.net/stream/c-9990cd5b96f85daf3f3dc57ed801a899-6.mp3"
+            imgSrc: "https://cdns-images.dzcdn.net/images/cover/b69d3bcbd130ad4cc9259de543889e30/120x120-000000-80-0-0.jpg"
         },
         {
             artist: "Mariah Carey",
             trackName: "Hero",
             imgSrc: "https://cdns-images.dzcdn.net/images/cover/074f9fdaefead72442368c647b46f500/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-4.dzcdn.net/stream/c-4198383a493dba56fbea1e32dc16ec94-5.mp3"
         },
         {
             artist: "John Legend",
             trackName: "Ordinary People",
-            imgSrc: "https://cdns-images.dzcdn.net/images/cover/f9ed9e5d58d7c8d442929ad05b0079de/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-3.dzcdn.net/stream/c-3970639cdf428156d7dcb499fbda8430-4.mp3"
+            imgSrc: "https://cdns-images.dzcdn.net/images/cover/f9ed9e5d58d7c8d442929ad05b0079de/120x120-000000-80-0-0.jpg"
         },
         {
             artist: "Michael Jackson",
             trackName: "Beat it",
-            imgSrc: "https://cdns-images.dzcdn.net/images/cover/ebeac32e9207c60877228ddc5bb37233/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-3.dzcdn.net/stream/c-38cc628c62382a20a53316db263f0547-5.mp3"
+            imgSrc: "https://cdns-images.dzcdn.net/images/cover/ebeac32e9207c60877228ddc5bb37233/120x120-000000-80-0-0.jpg"
         },
         {
             artist: "Pharrell Williams",
             trackName: "Happy",
-            imgSrc: "https://cdns-images.dzcdn.net/images/cover/4260e0e68a0f48406e3c9b7f8734b1cb/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-6.mp3"
+            imgSrc: "https://cdns-images.dzcdn.net/images/cover/4260e0e68a0f48406e3c9b7f8734b1cb/120x120-000000-80-0-0.jpg"
         },
         {
             artist: "Roy Ayers",
             trackName: "Everybody Loves The Sunshine",
-            imgSrc: "https://cdns-images.dzcdn.net/images/cover/d340020de3f14efb249ff4b61dd63c47/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-6.dzcdn.net/stream/c-668b3b26fd48317a2df1bd9b73d61c91-10.mp3"
+            imgSrc: "https://cdns-images.dzcdn.net/images/cover/d340020de3f14efb249ff4b61dd63c47/120x120-000000-80-0-0.jpg"
         },
         {
             artist: "Lil Nas X",
             trackName: "Old Town Road",
-            imgSrc: "https://cdns-images.dzcdn.net/images/cover/3cfd6900fd2b342ec0e478faf300f6a2/120x120-000000-80-0-0.jpg",
-            audioSrc: "https://cdns-preview-0.dzcdn.net/stream/c-00f5ada432d79bcedcc9d4e4c6856888-5.mp3"
+            imgSrc: "https://cdns-images.dzcdn.net/images/cover/3cfd6900fd2b342ec0e478faf300f6a2/120x120-000000-80-0-0.jpg"
+        },
+    ],
+    albumsData: [
+        {
+            artist: "Drake",
+            albumName: "Nothing Was the Same",
+            imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp5ytnrEInKmssaJwmfRRsZDIrojOtI3eD9A&usqp=CAU"
+        },
+        {
+            artist: "John Legend",
+            albumName: "A Legendary Christmas",
+            imgSrc: "https://images-na.ssl-images-amazon.com/images/I/71puTP%2B02tL._SL1500_.jpg"
+        },
+        {
+            artist: "Roy Ayers",
+            albumName: "Silver Vibrations",
+            imgSrc: "https://d1gdi8qinx8x49.cloudfront.net/540x540/106127.jpeg"
+        },
+        {
+            artist: "Alicia Keys",
+            albumName: "ALICIA",
+            imgSrc: "https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/pp7xcmgjg2l4fcnuz3gb/alicia-album"
+        },
+        {
+            artist: "Pharrell Williams",
+            albumName: "GIRL",
+            imgSrc: "https://images-na.ssl-images-amazon.com/images/I/71KAQexjuuL._SL1500_.jpg"
         },
     ]
 }

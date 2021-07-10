@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import "./MusicInterests.scss";
 import Artist from "./artist/Artist";
 import Track from "./track/Track";
+import Album from "./album/Album";
 import { data } from "../../data/profile/MusicData";
 import { Tabs } from "antd";
 
@@ -15,9 +16,10 @@ function RemoveItem(list, index, setList) {
 }
 
 function MusicInterests() {
-    const { artistsData, tracksData } = data;
+    const { artistsData, tracksData, albumsData } = data;
     const [ artistList, setArtistList ] = useState(artistsData);
     const [ trackList, setTrackList ] = useState(tracksData);
+    const [ albumList, setAlbumList ] = useState(albumsData);
 
     return (
         <section className="user-music-section">
@@ -29,11 +31,13 @@ function MusicInterests() {
                 </TabPane>
                 <TabPane className="tracks-section" tab="Tracks" key="tracks">
                     {trackList.length !== 0 ? trackList.map((item, index) => {
-                        return (<Track artist={item.artist} trackName={item.trackName} imgSrc={item.imgSrc} audioSrc={item.audioSrc} trackList={trackList} index={index} removeFn={RemoveItem} setTrackList={setTrackList}/>)
+                        return (<Track artist={item.artist} trackName={item.trackName} imgSrc={item.imgSrc} trackList={trackList} index={index} removeFn={RemoveItem} setTrackList={setTrackList}/>)
                     }) : <h2 className="empty-tracks empty">No tracks added yet!</h2> }
                 </TabPane>
-                <TabPane tab="Albums" key="albums">
-                    Albums go here
+                <TabPane className="albums-section" tab="Albums" key="albums">
+                    {albumList.length !== 0 ? albumList.map((item, index) => {
+                        return (<Album artist={item.artist} albumName={item.albumName} imgSrc={item.imgSrc} albumList={albumList} index={index} removeFn={RemoveItem} setAlbumList={setAlbumList}/>)
+                    }) : <h2 className="empty-albums empty">No albums added yet!</h2> }
                 </TabPane>
             </Tabs>
         </section>

@@ -5,7 +5,7 @@ import { Card, Avatar } from "antd";
 
 const { Meta } = Card;
 
-function Track({ artist, trackName, imgSrc, audioSrc, trackList, index, removeFn, setTrackList }) {
+function Track({ artist, trackName, imgSrc, trackList, index, removeFn, setTrackList }) {
 
     return (
         <div className="track-card">

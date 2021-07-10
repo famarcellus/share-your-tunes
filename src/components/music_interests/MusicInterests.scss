@@ -1,5 +1,21 @@
 .user-music-section {
 
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #ababab; 
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #7d7d7d; 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
     .ant-tabs {
         color: white;
 
@@ -14,11 +30,17 @@
         .ant-tabs-ink-bar {
             background: white;
         }
+
+        .ant-tabs-content-holder {
+            height: 200px;
+            overflow-y: auto;
+        }
     }
 
     .artists-section {
         display: flex;
         flex-flow: row wrap;
+        justify-content: flex-start;
     }
 
     .tracks-section {
@@ -26,6 +48,10 @@
         flex-flow: row wrap;
     }
     
+    .albums-section {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
 @media only screen and (min-width: 554px) {
@@ -37,7 +63,7 @@
        
 
         .ant-tabs {
-            width: 400px;
+            width: 500px;
         }
     }
 

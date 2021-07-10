@@ -1,23 +1,24 @@
-.artist-card {
-    width: 200px;
-    margin-right: 30px;
-    
+.album-card {
+    width: 240px;
+
     .ant-card {
         background: transparent;
 
         .ant-avatar {
             width: 40px;
             height: 40px;
+            border-radius: 0px;
         }
 
         .ant-card-meta-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: white;
             white-space: normal;
         }
 
         .ant-card-body {
             padding-left: 5px;
+            padding-top: 20px;
         }
         
         .ant-card-meta-avatar {
@@ -31,7 +32,8 @@
     }
 
     .ant-card-meta-detail {
-        margin-top: 5px;
+        margin-top: 0px;
+        margin-right: 4px;
     }
 
     .x-mark {
@@ -46,7 +48,7 @@
 
 }
 
-.artist-card:hover {
+.album-card:hover {
 
     .x-mark {
         position: absolute;
