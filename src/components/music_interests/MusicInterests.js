@@ -27,8 +27,10 @@ function MusicInterests() {
                         return (<Artist name={item.name} imgSrc={item.src} artistList={artistList} index={index} removeFn={RemoveItem} setArtistList={setArtistList}/>)
                     }) : <h2 className="empty-artists empty">No artists added yet!</h2> }
                 </TabPane>
-                <TabPane tab="Tracks" key="tracks">
-                    Tracks go here
+                <TabPane className="tracks-section" tab="Tracks" key="tracks">
+                    {trackList.length !== 0 ? trackList.map((item, index) => {
+                        return (<Track artist={item.artist} trackName={item.trackName} imgSrc={item.imgSrc} audioSrc={item.audioSrc} trackList={trackList} index={index} removeFn={RemoveItem} setTrackList={setTrackList}/>)
+                    }) : <h2 className="empty-tracks empty">No tracks added yet!</h2> }
                 </TabPane>
                 <TabPane tab="Albums" key="albums">
                     Albums go here

@@ -10,7 +10,7 @@ function Artist({ name, imgSrc, artistList, index, removeFn, setArtistList }) {
     return (
         <div className="artist-card">
             <Card size="small">
-                <Meta avatar={<Avatar src={imgSrc}/>} title={name}/>
+                <Meta avatar={<Avatar src={imgSrc} alt={name}/>} title={name}/>
                 <img className="x-mark" src={x_mark} width="20px" height="20px" alt="X icon" 
                     onClick={() => {removeFn(artistList, index, setArtistList)}}>
                 </img>

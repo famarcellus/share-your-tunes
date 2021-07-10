@@ -1,0 +1,64 @@
+.track-card {
+    width: 225px;
+
+    .ant-card {
+        background: transparent;
+
+        .ant-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 0px;
+        }
+
+        .ant-card-meta-title {
+            font-size: 1rem;
+            color: white;
+            white-space: normal;
+        }
+
+        .ant-card-body {
+            padding-left: 5px;
+            padding-top: 17px;
+        }
+        
+        .ant-card-meta-avatar {
+            padding-right: 10px;
+        }
+        
+    }
+
+    .ant-card-bordered {
+        border: none;
+    }
+
+    .ant-card-meta-detail {
+        margin-top: 5px;
+    }
+
+    .x-mark {
+        position: absolute;
+        z-index: 5;
+        opacity: 0;
+        top: 10px;
+        right: 10px;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
+        cursor: pointer;
+    }
+
+}
+
+.track-card:hover {
+
+    .x-mark {
+        position: absolute;
+        z-index: 5;
+        opacity: 1;
+        top: 5px;
+        right: 8px;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
+        cursor: pointer;
+    }
+    .x-mark:hover {
+        filter: invert(55%) sepia(99%) saturate(7495%) hue-rotate(359deg) brightness(98%) contrast(111%);
+    }
+}
