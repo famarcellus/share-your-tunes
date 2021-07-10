@@ -37,20 +37,13 @@
         }
     }
 
-    .artists-section {
+    .sub-section {
         display: flex;
         flex-flow: row wrap;
-        justify-content: flex-start;
     }
 
-    .tracks-section {
-        display: flex;
-        flex-flow: row wrap;
-    }
-    
-    .albums-section {
-        display: flex;
-        flex-flow: row wrap;
+    .artists-section {
+        justify-content: flex-start;
     }
 }
 
