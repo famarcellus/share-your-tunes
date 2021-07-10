@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./UserInfo.scss";
-import { Input } from 'antd';
+import { Input, Tooltip, message } from 'antd';
 import data from "../../data/profile/Bio";
 import editIcon from "../../assets/profile/edit_button.svg";
 import checkMarkIcon from "../../assets/profile/check_mark.svg";
@@ -9,6 +9,9 @@ import xMarkIcon from "../../assets/profile/x_mark.svg";
 const CHAR_LIMIT = 100;
 const { TextArea } = Input;
 
+const success = () => {
+    message.success("Successfully changed bio", 1);
+}
 
 function BioEditVisibility(targetArray, visible, setVisible) {
     if(!visible) {
@@ -59,11 +62,12 @@ function ChangeEditValue(e, setInputValFn, setCharValueFn ) {
     }
 }
 
-function ApplyNewBio(editVal, setEditValFn, setBioValFn, bioArray, setVisibileFn, setCharFn) {
+function ApplyNewBio(editVal, setEditValFn, bioVal, setBioValFn, bioArray, setVisibileFn, setCharFn) {
     setBioValFn(editVal);
     setEditValFn("");
     BioEditVisibility(bioArray, true, setVisibileFn);
     setCharFn(CHAR_LIMIT);
+    success();
 }
 
 function ClearEditField(val, setValFn, setCharFn) {
@@ -114,8 +118,10 @@ function UserInfo() {
             <div className="bio-section">
                 <h2 className="user-bio" data-testid="bio">
                     {bioValue}
-                    <img className="edit-button" src={editIcon} onClick={() => BioEditVisibility(bioRefArray, editIsVisible, setEditIsVisible)} data-testid="edit-button"></img>
-                </h2>
+                    <Tooltip title="Click to edit bio" color="blue">
+                        <img className="edit-button" src={editIcon} onClick={() => BioEditVisibility(bioRefArray, editIsVisible, setEditIsVisible)} data-testid="edit-button"></img>
+                    </Tooltip>
+                    </h2>
                 <div className="edit-section">
                     <TextArea className="not-visible" rows={3} placeholder="Enter new bio here!" ref={EditFieldRef} data-testid="edit-field"
                         value={editValue} onChange={(e) => ChangeEditValue(e, setEditValue, setCharactersLeft)}
@@ -127,7 +133,7 @@ function UserInfo() {
                                     onClick={() => {ClearEditField(editValue, setEditValue, setCharactersLeft)}} data-testid="x-mark">
                                 </img>
                                 <img className="check-mark not-visible" src={checkMarkIcon} ref={CheckMarkRef} 
-                                    onClick={(e) => {ApplyNewBio(editValue, setEditValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft)}}>
+                                    onClick={(e) => {ApplyNewBio(editValue, setEditValue, bioValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft)}}>
                                 </img>
                             </pre>
                         </h3>
