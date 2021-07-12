@@ -79,6 +79,14 @@ function ClearEditField(val, setValFn, setCharFn) {
     return val;
 }
 
+function KeepButtonsVisible(xRef, checkRef) {
+    const refList = [xRef, checkRef];
+    refList.forEach((targetRef) => {
+        targetRef.current.classList.remove("not-visible");
+        targetRef.current.classList.add("visible");
+    })
+}
+
 function UserInfo() {
     const [ bioValue, setBioValue ] = useState(data.bio);
     const [ editIsVisible, setEditIsVisible ] = useState(false);
@@ -129,12 +137,16 @@ function UserInfo() {
                     <h3 className="character-limit not-visible" ref={CharactersRef}>
                             {charactersLeft} characters remaining
                             <pre>
-                                <img className="x-mark not-visible" src={xMarkIcon} ref={XMarkRef} 
-                                    onClick={() => {ClearEditField(editValue, setEditValue, setCharactersLeft)}} data-testid="x-mark">
-                                </img>
-                                <img className="check-mark not-visible" src={checkMarkIcon} ref={CheckMarkRef} 
-                                    onClick={(e) => {ApplyNewBio(editValue, setEditValue, bioValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft)}}>
-                                </img>
+                                <Tooltip title="Clear text" placement="bottom" color="red" onVisibleChange={() => KeepButtonsVisible(XMarkRef, CheckMarkRef)}>
+                                    <img className="x-mark not-visible" src={xMarkIcon} ref={XMarkRef} 
+                                        onClick={() => {ClearEditField(editValue, setEditValue, setCharactersLeft)}} data-testid="x-mark">
+                                    </img>
+                                </Tooltip>
+                                <Tooltip title="Apply changes" placement="bottom" color="green" onVisibleChange={() => KeepButtonsVisible(XMarkRef, CheckMarkRef)}>
+                                    <img className="check-mark not-visible" src={checkMarkIcon} ref={CheckMarkRef} 
+                                        onClick={(e) => {ApplyNewBio(editValue, setEditValue, bioValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft)}}>
+                                    </img>
+                                </Tooltip>                               
                             </pre>
                         </h3>
                 </div>

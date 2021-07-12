@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, act } from "@testing-library/react";
+import { render, fireEvent, act, waitFor } from "@testing-library/react";
 import { Navbar } from "./Navbar";
 
 describe("Header testing", () => {
@@ -17,7 +17,8 @@ describe("Header testing", () => {
             const target = getByTestId(icon);
             act(() => {
                 fireEvent.click(target);
-            })
+            });
+            
             expect(target).toHaveClass("ant-menu-item-selected");
         })
     })

@@ -1,21 +1,23 @@
 @keyframes fadeInFromLeft {
     0% { 
-        opacity: 0;
+        // opacity: 0;
+        visibility: hidden;
         transform: translateX(-10px);
      }
     100% { 
-        opacity: 1;
+        // opacity: 1;
+        visibility: initial;
         transform: translateX(0px);
     }
 }
 
 @keyframes fadeOutToleft {
     0% { 
-        opacity: 1;
+        visibility: initial;
         transform: translateX(0px);
      }
     100% { 
-        opacity: 0;
+        visibility: hidden;
         transform: translateX(-10px);
     }
 }
@@ -29,7 +31,7 @@
     padding: 0 3%;
 
     .not-visible {
-        opacity: 0%;
+        visibility: hidden;
     }
 
     .fade-out {
@@ -37,7 +39,6 @@
     }
     
     .visible {
-        opacity: 100%;
         animation: fadeInFromLeft linear .1s;
     }
 
@@ -52,6 +53,7 @@
         margin-top: 5px;
         font-weight: 600;
         letter-spacing: 0.03em;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     }
 
     .bio-section {

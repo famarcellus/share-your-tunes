@@ -13,7 +13,7 @@ function Navbar() {
     
     return (
         <header className="navbar">
-            <Menu onClick={HandleClick} selectedKeys={header.current} mode="horizontal" overflowedIndicator={<HamburgerIcon />}>
+            <Menu onClick={HandleClick} selectedKeys={header.current} mode="horizontal" overflowedIndicator={<HamburgerIcon />} triggerSubMenuAction="click">
                 <Menu.Item key="profile" icon={<ProfileIcon />} data-testid="profile">
                     Profile
                 </Menu.Item>
