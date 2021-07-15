@@ -5,15 +5,9 @@ import Track from "./track/Track";
 import Album from "./album/Album";
 import { data } from "../../data/profile/MusicData";
 import { Tabs } from "antd";
+import { RemoveItem } from "../../utilities/Utils";
 
 const { TabPane } = Tabs;
-
-function RemoveItem(list, index, setList) {
-    const newList = list.filter((item, i) => {
-        return i !== index;
-    })
-    setList(newList);
-}
 
 function MusicInterests() {
     const { artistsData, tracksData, albumsData } = data;

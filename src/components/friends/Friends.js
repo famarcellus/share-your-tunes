@@ -3,14 +3,8 @@ import "./Friends.scss"
 import { data } from "../../data/profile/FriendsData";
 import FriendCard from "./FriendCard";
 import FriendIcon from "../../assets/profile/friend.svg";
+import { RemoveItem } from "../../utilities/Utils";
 
-function RemoveItem(list, index, setList) {
-    const newList = list.filter((item, i) => {
-        return i !== index;
-    })
-    setList(newList);
-    console.log(newList);
-}
 
 function Friends() {
     const { friendsData } = data;

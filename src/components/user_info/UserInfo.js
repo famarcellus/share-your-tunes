@@ -1,91 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./UserInfo.scss";
-import { Input, Tooltip, message } from 'antd';
+import { Input, Tooltip } from 'antd';
 import data from "../../data/profile/Bio";
 import editIcon from "../../assets/profile/edit_button.svg";
 import checkMarkIcon from "../../assets/profile/check_mark.svg";
 import xMarkIcon from "../../assets/profile/x_mark.svg";
-
-const CHAR_LIMIT = 100;
+import { BioEditVisibility, ChangeEditValue, ApplyNewBio, ClearEditField, KeepButtonsVisible } from "../../utilities/Utils";
 const { TextArea } = Input;
 
-const success = () => {
-    message.success("Successfully changed bio", 1);
-}
+const CHAR_LIMIT = 100;
 
-function BioEditVisibility(targetArray, visible, setVisible) {
-    if(!visible) {
-        targetArray.forEach((targetRef) => {
-            if(targetRef.current.classList !== undefined) {
-                targetRef.current.classList.remove("not-visible");
-                targetRef.current.classList.remove("fade-out");
-                targetRef.current.classList.add("visible");
-            }
-            else {
-                targetRef.current.resizableTextArea.textArea.classList.remove("not-visible");
-                targetRef.current.resizableTextArea.textArea.classList.remove("fade-out");
-                targetRef.current.resizableTextArea.textArea.classList.add("visible");
-            }
-           
-        })
-        setVisible(true);
-    }
 
-    if(visible) {
-        targetArray.forEach((targetRef) => {
-            if(targetRef.current.classList !== undefined) {
-                targetRef.current.classList.remove("visible");
-                targetRef.current.classList.add("not-visible");
-                targetRef.current.classList.add("fade-out");
-            }
-            else {
-                targetRef.current.resizableTextArea.textArea.classList.remove("visible");
-                targetRef.current.resizableTextArea.textArea.classList.add("not-visible");
-                targetRef.current.resizableTextArea.textArea.classList.add("fade-out");
-            }
-            
-        })
-        setVisible(false);
-    }
-}
-
-function ChangeEditValue(e, setInputValFn, setCharValueFn ) {
-    
-    if(e.target.value.length <= CHAR_LIMIT) {
-        setInputValFn(e.target.value);
-        setCharValueFn(CHAR_LIMIT - e.target.value.length);
-    }
-
-    if(e.target.value.length > CHAR_LIMIT) {
-        setInputValFn(e.target.value.slice(0,100));
-        setCharValueFn(0);
-    }
-}
-
-function ApplyNewBio(editVal, setEditValFn, bioVal, setBioValFn, bioArray, setVisibileFn, setCharFn) {
-    setBioValFn(editVal);
-    setEditValFn("");
-    BioEditVisibility(bioArray, true, setVisibileFn);
-    setCharFn(CHAR_LIMIT);
-    success();
-}
-
-function ClearEditField(val, setValFn, setCharFn) {
-    if(val !== "") {
-        setValFn("");
-        setCharFn(CHAR_LIMIT);
-    }
-
-    return val;
-}
-
-function KeepButtonsVisible(xRef, checkRef) {
-    const refList = [xRef, checkRef];
-    refList.forEach((targetRef) => {
-        targetRef.current.classList.remove("not-visible");
-        targetRef.current.classList.add("visible");
-    })
-}
 
 function UserInfo() {
     const [ bioValue, setBioValue ] = useState(data.bio);
@@ -127,32 +52,30 @@ function UserInfo() {
                 <h2 className="user-bio" data-testid="bio">
                     {bioValue}
                     <Tooltip title="Click to edit bio" color="blue">
-                        <img className="edit-button" src={editIcon} onClick={() => BioEditVisibility(bioRefArray, editIsVisible, setEditIsVisible)} data-testid="edit-button"></img>
+                        <img className="edit-button" src={editIcon} alt="Edit button" onClick={() => BioEditVisibility(bioRefArray, editIsVisible, setEditIsVisible)} data-testid="edit-button"></img>
                     </Tooltip>
                     </h2>
                 <div className="edit-section">
                     <TextArea className="not-visible" rows={3} placeholder="Enter new bio here!" ref={EditFieldRef} data-testid="edit-field"
-                        value={editValue} onChange={(e) => ChangeEditValue(e, setEditValue, setCharactersLeft)}
+                        value={editValue} onChange={(e) => ChangeEditValue(e, setEditValue, setCharactersLeft, CHAR_LIMIT)}
                     />
                     <h3 className="character-limit not-visible" ref={CharactersRef}>
                             {charactersLeft} characters remaining
                             <pre>
                                 <Tooltip title="Clear text" placement="bottom" color="red" onVisibleChange={() => KeepButtonsVisible(XMarkRef, CheckMarkRef)}>
-                                    <img className="x-mark not-visible" src={xMarkIcon} ref={XMarkRef} 
-                                        onClick={() => {ClearEditField(editValue, setEditValue, setCharactersLeft)}} data-testid="x-mark">
+                                    <img className="x-mark not-visible" src={xMarkIcon} alt="X button" ref={XMarkRef} 
+                                        onClick={() => {ClearEditField(editValue, setEditValue, setCharactersLeft, CHAR_LIMIT)}} data-testid="x-mark">
                                     </img>
                                 </Tooltip>
                                 <Tooltip title="Apply changes" placement="bottom" color="green" onVisibleChange={() => KeepButtonsVisible(XMarkRef, CheckMarkRef)}>
-                                    <img className="check-mark not-visible" src={checkMarkIcon} ref={CheckMarkRef} 
-                                        onClick={(e) => {ApplyNewBio(editValue, setEditValue, bioValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft)}}>
+                                    <img className="check-mark not-visible" src={checkMarkIcon} alt="Check Mark button" ref={CheckMarkRef} 
+                                        onClick={(e) => {ApplyNewBio(editValue, setEditValue, bioValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft, CHAR_LIMIT)}}>
                                     </img>
                                 </Tooltip>                               
                             </pre>
                         </h3>
                 </div>
-                
-            </div>
-            
+            </div>   
         </section>
         
     )
