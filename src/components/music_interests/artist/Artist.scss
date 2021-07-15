@@ -39,8 +39,8 @@
         z-index: 5;
         opacity: 0;
         transition: opacity 0.2s;
-        top: 5px;
-        right: 8px;
+        top: 14px;
+        right: 0px;
         filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
         cursor: pointer;
     }
@@ -53,8 +53,8 @@
         position: absolute;
         z-index: 5;
         opacity: 1;
-        top: 5px;
-        right: 8px;
+        top: 14px;
+        right: 0px;
         filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
         cursor: pointer;
     }
