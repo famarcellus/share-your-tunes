@@ -1,8 +1,7 @@
 /********* UserInfo component functions BEGIN *********/
 
 export function BioSuccess() {
-    const antd = require("antd");
-    const { message } = antd;
+    const { message } = require("antd");
     message.success("Successfully changed bio", 1);
 }
 
@@ -82,8 +81,7 @@ export function KeepButtonsVisible(xRef, checkRef) {
 
 
 export async function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
-    const antd = require("antd");
-    const { message } = antd;
+    const { message } = require("antd");
     
     if(!imageFile) {
         message.error(`${imageFile.name} file upload failed.`);
@@ -101,8 +99,7 @@ export async function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
 }
 
 export function BeforeUpload(file) {
-    const antd = require("antd");
-    const { message } = antd;
+    const { message } = require("antd");
     console.log(`Before Upload File: ${file}`);
 
     const isJpgOrPng = file.type === "image/jpeg"|| file.type === "image/png";
@@ -118,8 +115,7 @@ export function BeforeUpload(file) {
 }
 
 export function RemoveImage(setImageFn, setImageExistsFn) {
-    const antd = require("antd");
-    const { message } = antd;
+    const { message } = require("antd");
     message.success("Successfully removed profile picture!");
     setImageFn(null);
     setImageExistsFn(false);
