@@ -80,6 +80,51 @@ export function KeepButtonsVisible(xRef, checkRef) {
     })
 }
 
+
+export async function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
+    const antd = require("antd");
+    const { message } = antd;
+    
+    if(!imageFile) {
+        message.error(`${imageFile.name} file upload failed.`);
+        return;
+    }
+
+    // Image isn't actually uploaded, this code ensures message is only displayed once
+    if(imageFile.file.status === "error") {
+        let url = URL.createObjectURL(imageFile.file.originFileObj);
+        setImageFn(url);
+        setImageExistsFn(true);
+        message.success("Succesfully changed profile picture!");
+        return;
+    }
+}
+
+export function BeforeUpload(file) {
+    const antd = require("antd");
+    const { message } = antd;
+    console.log(`Before Upload File: ${file}`);
+
+    const isJpgOrPng = file.type === "image/jpeg"|| file.type === "image/png";
+    if(!isJpgOrPng) {
+        message.error("You can only upload JPG/PNG file!");
+    }
+    const isLess2M = file.size / 1024 / 1024 < 2;
+    if(!isLess2M) {
+        message.error("Image must be smaller than 2MB!");
+    }
+
+    return isJpgOrPng && isLess2M;
+}
+
+export function RemoveImage(setImageFn, setImageExistsFn) {
+    const antd = require("antd");
+    const { message } = antd;
+    message.success("Successfully removed profile picture!");
+    setImageFn(null);
+    setImageExistsFn(false);
+}
+
 /********* UserInfo component functions ENDS *********/
 
 /********* MusicInterests component functions BEGINS *********/

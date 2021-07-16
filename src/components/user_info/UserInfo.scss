@@ -1,11 +1,9 @@
 @keyframes fadeInFromLeft {
     0% { 
-        // opacity: 0;
         visibility: hidden;
         transform: translateX(-10px);
      }
     100% { 
-        // opacity: 1;
         visibility: initial;
         transform: translateX(0px);
     }
@@ -43,10 +41,14 @@
     }
 
     .profile-pic {
-        background: lightblue;
         border-radius: 50%;
-        width: 85px;
-        height: 80px;
+        width: 95px;
+        height: 90px;
+        margin-bottom: 5px;
+    }
+    
+    .upload-button {
+        margin-bottom: 4px;
     }
 
     .user-name {

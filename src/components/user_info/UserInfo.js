@@ -1,28 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./UserInfo.scss";
-import { Input, Tooltip } from 'antd';
+import { Input, Tooltip, Button, Upload } from 'antd';
+import ImgCrop from "antd-img-crop";
 import data from "../../data/profile/Bio";
 import editIcon from "../../assets/profile/edit_button.svg";
 import checkMarkIcon from "../../assets/profile/check_mark.svg";
 import xMarkIcon from "../../assets/profile/x_mark.svg";
-import { BioEditVisibility, ChangeEditValue, ApplyNewBio, ClearEditField, KeepButtonsVisible } from "../../utilities/Utils";
+import profileIcon from "../../assets/profile/profile.svg";
+import { BioEditVisibility, ChangeEditValue, ApplyNewBio, ClearEditField, KeepButtonsVisible, ChangeImage, 
+    BeforeUpload, RemoveImage } from "../../utilities/Utils";
+
 const { TextArea } = Input;
-
 const CHAR_LIMIT = 100;
-
-
 
 function UserInfo() {
     const [ bioValue, setBioValue ] = useState(data.bio);
     const [ editIsVisible, setEditIsVisible ] = useState(false);
     const [ editValue, setEditValue ] = useState("");
     const [ charactersLeft, setCharactersLeft ] = useState(100);
+    const [ profileImage, setProfileImage ] = useState(null);
+    const [ profileImageExists, setProfileImageExists ] = useState(false);
     const EditFieldRef = useRef(null);
     const CharactersRef = useRef(null);
     const XMarkRef = useRef(null);
     const CheckMarkRef = useRef(null);
     const bioRefArray = [ EditFieldRef, CharactersRef, XMarkRef, CheckMarkRef ];
-
 
     useEffect(() => {
         if(bioValue === "") {
@@ -44,9 +46,20 @@ function UserInfo() {
 
     }, [bioValue, charactersLeft])
 
+    useEffect(() => {
+        console.log(profileImage);
+    }, [profileImage])
+
     return (
         <section className="info-section">
-            <img className="profile-pic"></img>
+            {!profileImageExists ? <img className="profile-pic" src={profileIcon}></img> : 
+            <img className="profile-pic" src={profileImage}></img>}
+            <ImgCrop>
+                <Upload beforeUpload={BeforeUpload} showUploadList={false} onChange={(file) => ChangeImage(file, setProfileImage, setProfileImageExists)}>
+                    <Button className="upload-button" type="primary" size="small" ghost>Change Profile Image</Button>
+                </Upload>
+            </ImgCrop>
+            {profileImageExists && <Button type="primary" size="small" danger ghost onClick={() => {RemoveImage(setProfileImage, setProfileImageExists)}}>Remove Image</Button>}
             <h1 className="user-name">Steve Rogers</h1>
             <div className="bio-section">
                 <h2 className="user-bio" data-testid="bio">
