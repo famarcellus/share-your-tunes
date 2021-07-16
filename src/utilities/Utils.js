@@ -80,7 +80,7 @@ export function KeepButtonsVisible(xRef, checkRef) {
 }
 
 
-export async function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
+export function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
     const { message } = require("antd");
     
     if(!imageFile) {
@@ -93,7 +93,7 @@ export async function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
         let url = URL.createObjectURL(imageFile.file.originFileObj);
         setImageFn(url);
         setImageExistsFn(true);
-        message.success("Succesfully changed profile picture!");
+        message.success("Succesfully added NEW profile picture!");
         return;
     }
 }
@@ -116,7 +116,7 @@ export function BeforeUpload(file) {
 
 export function RemoveImage(setImageFn, setImageExistsFn) {
     const { message } = require("antd");
-    message.success("Successfully removed profile picture!");
+    message.success("Successfully removed your profile picture!");
     setImageFn(null);
     setImageExistsFn(false);
 }
