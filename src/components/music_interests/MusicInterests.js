@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./MusicInterests.scss";
 import Artist from "./artist/Artist";
 import Track from "./track/Track";

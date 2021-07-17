@@ -12,7 +12,7 @@ function Friends() {
 
     return (
         <section className="friends-section">
-            <h1 className="title">Friends<img className="icon" src={FriendIcon} width="32px" height="32px"></img></h1>
+            <h1 className="title">Friends<img className="icon" alt="friend icon" src={FriendIcon} width="32px" height="32px"></img></h1>
             <div className="card-section">
                 {friendsList.length !== 0 ? friendsList.map((item, index) => {
                     return (<FriendCard name={item.name} imgSrc={item.imgSrc} friendsList={friendsList} index={index} removeFn={RemoveItem} setFriendsList={setFriendsList}></FriendCard>)

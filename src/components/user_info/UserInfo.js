@@ -49,8 +49,8 @@ function UserInfo() {
 
     return (
         <section className="info-section">
-            {!profileImageExists ? <img className="profile-pic" src={profileIcon}></img> : 
-            <img className="profile-pic" src={profileImage}></img>}
+            {!profileImageExists ? <img className="profile-pic" alt="Profile icon" src={profileIcon}></img> : 
+            <img className="profile-pic" alt="Profile" src={profileImage}></img>}
             <ImgCrop>
                 <Upload beforeUpload={BeforeUpload} showUploadList={false} onChange={(file) => ChangeImage(file, setProfileImage, setProfileImageExists)}>
                     <Button className="upload-button" type="primary" size="small" ghost>Change Profile Image</Button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import x_mark from "../../assets/profile/x_mark.svg";
 import { Card, Avatar, Popconfirm, message } from "antd";
 import "./FriendCard.scss";
