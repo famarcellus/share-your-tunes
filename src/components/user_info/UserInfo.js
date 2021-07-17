@@ -46,9 +46,6 @@ function UserInfo() {
 
     }, [bioValue, charactersLeft])
 
-    useEffect(() => {
-        console.log(profileImage);
-    }, [profileImage])
 
     return (
         <section className="info-section">

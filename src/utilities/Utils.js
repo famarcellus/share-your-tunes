@@ -132,4 +132,30 @@ export function RemoveItem(list, index, setList) {
     setList(newList);
 }
 
+export function CalculateData(artistList, trackList, albumList) {
+    const entireList = [...artistList, ...trackList, ...albumList];
+    if(entireList.length === 0) {
+        return [];
+    }
+
+    var counts = {}, max = 0, res;
+    for (var v in entireList) {
+        counts[entireList[v].artist ]= (counts[entireList[v].artist] || 0) + 1;
+        if (counts[entireList[v].artist] > max) { 
+        max = counts[entireList[v].artist];
+        res = entireList[v].artist;
+        }
+    }
+
+    var sortedCounts = [];
+    for (const person in counts) {
+        sortedCounts.push({"artist": person, "count": counts[person]});
+    }
+    sortedCounts.sort((a,b) => {
+        return b.count - a.count;
+    });
+
+    var results = sortedCounts.slice(0,3);
+    return results;
+}
 /********* MusicInterests component functions ENDS *********/
