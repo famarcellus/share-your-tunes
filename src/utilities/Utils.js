@@ -143,7 +143,6 @@ export function CalculateData(artistList, trackList, albumList) {
         counts[entireList[v].artist ]= (counts[entireList[v].artist] || 0) + 1;
         if (counts[entireList[v].artist] > max) { 
         max = counts[entireList[v].artist];
-        res = entireList[v].artist;
         }
     }
 

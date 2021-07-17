@@ -6,7 +6,6 @@ import Album from "./album/Album";
 import { data } from "../../data/profile/MusicData";
 import { Tabs } from "antd";
 import { CalculateData, RemoveItem } from "../../utilities/Utils";
-// import { Pie } from "@ant-design/charts";
 import MusicChart from "./MusicChart";
 
 const { TabPane } = Tabs;
