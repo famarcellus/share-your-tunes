@@ -130,6 +130,8 @@ export function RemoveItem(list, index, setList) {
         return i !== index;
     })
     setList(newList);
+
+    return newList;
 }
 
 export function CalculateData(artistList, trackList, albumList) {

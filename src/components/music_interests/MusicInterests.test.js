@@ -1,9 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import { CalculateData } from "../../utilities/Utils";
-
-
-
+import { CalculateData, RemoveItem } from "../../utilities/Utils";
 
 describe("Top 3 duplicates should be correctly displayed", () => {
 
@@ -60,4 +57,25 @@ describe("Top 3 duplicates should be correctly displayed", () => {
         var result = CalculateData([],[],[]);
         expect(result).toStrictEqual([]);
     })
+
 });
+
+describe("RemoveItem function testing", () => {
+    test("RemoveItem fn should remove Taylor Swift successfully", () => {
+        const initial = ["Adam Levigne", "Taylor Swift", "John Lennon" ];
+        let results;
+        results = RemoveItem(initial, 1, (list) => list = list);
+        expect(results).not.toStrictEqual(initial);
+    });
+
+    test("RemoveItem fn should return empty array", () => {
+        const initial = [];
+        let results;
+        results = RemoveItem(initial, 1, (list) => list = list);
+        expect(results).toStrictEqual(initial);
+    });
+});
+
+
+
+
