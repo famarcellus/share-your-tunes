@@ -5,11 +5,12 @@ import { Card, Avatar, Popconfirm, message } from "antd";
 
 const { Meta } = Card;
 
-function Track({ artist, trackName, imgSrc, trackList, index, removeFn, setTrackList }) {
+function Track({ artist, trackName, imgSrc, tracksList, index, removeFn, removeTrack}) {
 
     const success = () => {
         message.success(`Removed "${artist} - ${trackName}" from Track List`);
-        removeFn(trackList, index, setTrackList);
+        const updatedList = removeFn(tracksList, index);
+        removeTrack(updatedList);
     }
 
     return (

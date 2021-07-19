@@ -5,11 +5,12 @@ import "./FriendCard.scss";
 
 const { Meta } = Card;
 
-function FriendCard({ name, imgSrc, friendsList, index, removeFn, setFriendsList }) {
+function FriendCard({ name, imgSrc, friendsList, index, removeFn, removeFriend }) {
 
     const success = () => {
         message.success(`Removed "${name}" from Friends List`);
-        removeFn(friendsList, index, setFriendsList);
+        const updatedList = removeFn(friendsList, index);
+        removeFriend(updatedList);
     }
 
     return (

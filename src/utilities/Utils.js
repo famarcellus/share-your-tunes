@@ -125,12 +125,10 @@ export function RemoveImage(setImageFn, setImageExistsFn) {
 
 /********* MusicInterests component functions BEGINS *********/
 
-export function RemoveItem(list, index, setList) {
+export function RemoveItem(list, index) {
     const newList = list.filter((item, i) => {
         return i !== index;
     })
-    setList(newList);
-
     return newList;
 }
 

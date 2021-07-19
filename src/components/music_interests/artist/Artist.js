@@ -6,11 +6,12 @@ import { Card, Avatar, Popconfirm, message } from "antd";
 const { Meta } = Card;
 
 
-function Artist({ artist, imgSrc, artistList, index, removeFn, setArtistList }) {
+function Artist({ artist, imgSrc, artistsList, index, removeFn, removeArtist}) {
 
     const success = () => {
         message.success(`Removed "${artist}" from Artist List`);
-        removeFn(artistList, index, setArtistList);
+        const updatedList = removeFn(artistsList, index);
+        removeArtist(updatedList);
     }
 
     return (
