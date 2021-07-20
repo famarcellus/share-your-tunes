@@ -1,5 +1,7 @@
 /********* UserInfo component functions BEGIN *********/
 
+import { unblockUser } from "../store/action_creators";
+
 export function BioSuccess() {
     const { message } = require("antd");
     message.success("Successfully changed bio", 1);
@@ -158,3 +160,10 @@ export function CalculateData(artistList, trackList, albumList) {
     return results;
 }
 /********* MusicInterests component functions ENDS *********/
+
+export function Unblock(blockList, index, unblockUserFn) {
+    const { message } = require("antd");
+    message.success(`Successfully unblocked "${blockList[index]}"`);
+    const updatedList = RemoveItem(blockList, index);
+    unblockUserFn(updatedList);
+}

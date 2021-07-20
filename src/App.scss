@@ -39,3 +39,29 @@ h1, h2, h3, h4, h5, h6 {
   filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(117deg) brightness(107%) contrast(101%);
   transition: filter 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
+.blocked-section {
+  .ant-drawer-title {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .ant-drawer-header {
+    background: #292A37;
+  }
+
+  .ant-drawer-content {
+    background-color: #292A37;
+  }
+
+  .user {
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 10px;
+
+    .unblock-btn {
+      margin-left: 3px;
+    }
+  }
+}

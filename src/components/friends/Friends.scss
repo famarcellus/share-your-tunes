@@ -31,6 +31,14 @@
             margin-left: 10px;
             margin-bottom: 3px;
         }
+
+        .blocked-users {
+            margin-left: 10px;
+        }
+
+        .ant-btn-sm {
+            font-size: 13.5px;
+        }
     }
 
     .card-section {
@@ -40,6 +48,7 @@
         height: 200px;
         overflow-y: auto;
     }
+
 }
 
 @media only screen and (min-width: 554px) {

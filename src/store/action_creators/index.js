@@ -34,10 +34,19 @@ export const removeFriend = (list) => {
     }
 }
 
-export const blockFriend = (list) => {
+export const blockUser = (list) => {
     return (dispatch) => {
         dispatch({
-            type: "BLOCK",
+            type: "BLOCK_USER",
+            payload: list
+        });
+    }
+}
+
+export const unblockUser = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "UNBLOCK_USER",
             payload: list
         });
     }

@@ -45,6 +45,15 @@
         cursor: pointer;
     }
 
+    .more-icon {
+        position: absolute;
+        z-index: 5;
+        top: 18px;
+        right: 0px;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
+        cursor: pointer;
+    }
+
 }
 
 .friend-card:hover {
@@ -58,6 +67,10 @@
         opacity: 1;
         filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
         cursor: pointer;
+    }
+
+    .more-icon {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(73deg) brightness(103%) contrast(103%);
     }
     .x-mark:hover {
         filter: invert(55%) sepia(99%) saturate(7495%) hue-rotate(359deg) brightness(98%) contrast(111%);
