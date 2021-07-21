@@ -10,6 +10,5 @@ describe("Friend component testing", () => {
     test("Friends data should load successfully", () => {
         let { friendsData } = data;
         expect(friendsData.length).toBe(5);
-    })
-
+    });
 });

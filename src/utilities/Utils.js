@@ -1,7 +1,5 @@
 /********* UserInfo component functions BEGIN *********/
 
-import { unblockUser } from "../store/action_creators";
-
 export function BioSuccess() {
     const { message } = require("antd");
     message.success("Successfully changed bio", 1);

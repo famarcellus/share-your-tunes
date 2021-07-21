@@ -40,6 +40,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: filter 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.ant-result-404 {
+  .ant-result-title {
+    color: white;
+  }
+  .ant-result-subtitle {
+    color: white;
+  }
+}
+
 .blocked-section {
   .ant-drawer-title {
     color: white;

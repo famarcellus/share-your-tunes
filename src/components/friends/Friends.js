@@ -41,7 +41,7 @@ function Friends() {
                 >
                 {blockList.length !== 0 ? blockList.map((friendName, index) => {
                     return (<p className="user">{`${friendName}`}<Button className="unblock-btn" type="primary" onClick={() => Unblock(blockList, index, unblockUser)}size="small" danger>Unblock</Button></p>)
-                }) : <h2 className="empty-blocked">You don't have any users blocked</h2>}
+                }) : <h2 className="empty-blocked" data-testid="empty-blocked">You don't have any users blocked</h2>}
             </Drawer>
         </section>
         
