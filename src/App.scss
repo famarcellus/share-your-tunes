@@ -10,6 +10,14 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+.page {
+  padding: 30px 5% 15px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
 
 .ant-menu {
   font-size: 1rem;
@@ -73,4 +81,43 @@ h1, h2, h3, h4, h5, h6 {
       margin-left: 3px;
     }
   }
+}
+
+.trash-option {
+  .trash-icon {
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
+}
+
+.block-option {
+  .block-icon {
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
+}
+
+.comment-modal {
+
+  .ant-modal-header {
+    background-color: #292A37;
+  }
+
+  .ant-modal-content {
+    background-color: #292A37;
+    
+    .ant-modal-title {
+      color: white;
+    }
+
+    .ant-modal-body {
+      resize: none;
+    }
+  }
+
+  .ant-input-textarea-show-count::after {
+    float: right;
+    color: white;
+    
+}
 }

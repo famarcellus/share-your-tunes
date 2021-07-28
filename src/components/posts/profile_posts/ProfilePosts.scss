@@ -1,0 +1,38 @@
+.profile-posts-section {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    
+    .empty-posts {
+        display: flex;
+        margin: auto;
+    }
+
+    .ant-input-textarea-show-count::after {
+        color: white;
+    }
+
+    .create-section {
+        display: flex;
+        margin: auto;
+        flex-flow: column wrap;
+        justify-content: center;
+
+        .input-field {
+            width: 400px;
+        }
+
+        .ant-input {
+            resize: none;
+        }
+
+        .post-button {
+            display: inline;
+            width: 75px;
+            margin-top: -15px;
+        }
+    }
+    
+}

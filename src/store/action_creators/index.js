@@ -51,3 +51,49 @@ export const unblockUser = (list) => {
         });
     }
 }
+
+export const updateProfilePost = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "UPDATE_PROFILE_POST",
+            payload: list
+        });
+    }
+}
+
+export const removeProfilePost = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "REMOVE_PROFILE_POST",
+            payload: list
+        });
+    }
+}
+
+export const updateFeedPost = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "UPDATE_FEED_POST",
+            payload: list
+        });
+    }
+}
+
+export const removeFeedPost = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "REMOVE_FEED_POST",
+            payload: list
+        });
+    }
+}
+
+export const updateUser = (obj) => {
+    return (dispatch) => {
+        dispatch({
+            type: "UPDATE_USER",
+            payload: obj
+        });
+    }
+}
+

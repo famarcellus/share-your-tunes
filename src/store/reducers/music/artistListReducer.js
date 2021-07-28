@@ -1,6 +1,5 @@
-import { data } from "../../../data/profile/MusicData";
+import { artistsData } from "../../../data/profile/MusicData";
 
-const { artistsData } = data;
 const artistsListReducer = (state = artistsData, action) => {
     switch(action.type) {
         case "REMOVE_ARTIST":

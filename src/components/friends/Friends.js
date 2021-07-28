@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../store/actionCreators";
 import FriendCard from "./FriendCard";
 import FriendIcon from "../../assets/profile/friend.svg";
-import { RemoveItem, Unblock } from "../../utilities/Utils";
+import { Unblock } from "../../utilities/Utils";
 import { Button, Drawer } from "antd";
 
 
@@ -15,7 +15,7 @@ function Friends() {
         state.blockList
     ]);
     const dispatch = useDispatch();
-    const { removeFriend, blockUser, unblockUser } = bindActionCreators(actionCreators, dispatch);
+    const { unblockUser } = bindActionCreators(actionCreators, dispatch);
 
     const [visible, setVisible] = useState(false);
 
@@ -28,7 +28,7 @@ function Friends() {
             </h1>
             <div className="card-section">
                 {friendsList.length !== 0 ? friendsList.map((item, index) => {
-                    return (<FriendCard name={item.name} imgSrc={item.imgSrc} friendsList={friendsList} index={index} removeFn={RemoveItem} removeFriend={removeFriend} blockList={blockList} blockUser={blockUser}></FriendCard>)
+                    return (<FriendCard key={item.name} name={item.name} imgSrc={item.imgSrc} index={index}></FriendCard>)
                 }) : <h2 className="empty-friends">No friends yet!</h2>}
             </div>
             <Drawer

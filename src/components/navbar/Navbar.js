@@ -2,9 +2,10 @@ import React from "react";
 import { Menu } from 'antd';
 import { ProfileIcon, HomeIcon, MusicIcon, HamburgerIcon } from "../../assets/navbar/Icons";
 import "./Navbar.scss";
+import { useLocation } from "react-router-dom";
 
-function Navbar({ Link, location }) {
-    const { pathname } = location();
+function Navbar({ Link }) {
+    const { pathname } = useLocation();
     
     return (
         <header className="navbar">

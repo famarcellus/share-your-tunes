@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import {useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../store/actionCreators";
 import "./UserInfo.scss";
 import { Input, Tooltip, Button, Upload } from 'antd';
 import ImgCrop from "antd-img-crop";
@@ -18,13 +21,19 @@ function UserInfo() {
     const [ editIsVisible, setEditIsVisible ] = useState(false);
     const [ editValue, setEditValue ] = useState("");
     const [ charactersLeft, setCharactersLeft ] = useState(100);
-    const [ profileImage, setProfileImage ] = useState(null);
     const [ profileImageExists, setProfileImageExists ] = useState(false);
     const EditFieldRef = useRef(null);
     const CharactersRef = useRef(null);
     const XMarkRef = useRef(null);
     const CheckMarkRef = useRef(null);
     const bioRefArray = [ EditFieldRef, CharactersRef, XMarkRef, CheckMarkRef ];
+
+    const dispatch = useDispatch()
+    const [userData] = useSelector((state) => [
+        state.userData,
+    ]);
+    const { imgSrc } = userData;
+    const { updateUser } = bindActionCreators(actionCreators, dispatch);
 
     useEffect(() => {
         if(bioValue === "") {
@@ -49,14 +58,13 @@ function UserInfo() {
 
     return (
         <section className="info-section">
-            {!profileImageExists ? <img className="profile-pic" alt="Profile icon" src={profileIcon}></img> : 
-            <img className="profile-pic" alt="Profile" src={profileImage}></img>}
+            <img className="profile-pic" alt="Profile icon" src={!profileImageExists ? profileIcon : imgSrc}></img> 
             <ImgCrop>
-                <Upload beforeUpload={BeforeUpload} showUploadList={false} onChange={(file) => ChangeImage(file, setProfileImage, setProfileImageExists)}>
+                <Upload beforeUpload={BeforeUpload} showUploadList={false} onChange={(file) => ChangeImage(file, updateUser, userData, setProfileImageExists)}>
                     <Button className="upload-button" type="primary" size="small" ghost>Change Profile Image</Button>
                 </Upload>
             </ImgCrop>
-            {profileImageExists && <Button type="primary" size="small" danger ghost onClick={() => {RemoveImage(setProfileImage, setProfileImageExists)}}>Remove Image</Button>}
+            {profileImageExists && <Button type="primary" size="small" danger ghost onClick={() => {RemoveImage(updateUser, userData, setProfileImageExists)}}>Remove Image</Button>}
             <h1 className="user-name">Steve Rogers</h1>
             <div className="bio-section">
                 <h2 className="user-bio" data-testid="bio">

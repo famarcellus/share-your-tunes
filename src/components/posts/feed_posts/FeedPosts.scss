@@ -1,0 +1,13 @@
+.profile-posts-section {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    
+    .empty-posts {
+        display: flex;
+        margin: auto;
+    }
+
+}

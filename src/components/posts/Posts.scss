@@ -1,0 +1,61 @@
+.post-section {
+    width: 100%;
+    display: block;
+
+    .ant-modal-content {
+        background-color: #292A37;
+        
+        .ant-modal-title {
+            color: white;
+        }
+
+        .ant-modal-body {
+            resize: none;
+        }
+    }
+}
+
+.original-poster {
+    margin: 50px 0 60px 0;
+
+    .ant-comment-content-author-name > * {
+        color: white;
+        font-size: .9rem;
+        font-weight: 600;
+    }
+
+    .ant-comment-content-author {
+        margin-top: 5px;
+    }
+
+    .ant-comment-avatar {
+        cursor: initial;
+    }
+
+    .ant-comment-content {
+        font-size: .9rem;
+
+        .more-button {
+            filter: invert(74%) sepia(0%) saturate(0%) hue-rotate(43deg) brightness(110%) contrast(81%);
+            cursor: pointer;
+        }
+
+        .more-button:hover {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(80deg) brightness(106%) contrast(101%);
+        }
+    }
+
+    .ant-comment-actions > li {
+        margin-right: 30px;
+    }
+
+    .action-icon {
+        filter: invert(62%) sepia(63%) saturate(6849%) hue-rotate(336deg) brightness(97%) contrast(88%);
+        cursor: pointer;
+    }
+
+    .action-icon:hover {
+        filter: invert(36%) sepia(93%) saturate(3419%) hue-rotate(343deg) brightness(91%) contrast(97%);
+    }
+
+}

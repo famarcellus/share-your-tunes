@@ -1,6 +1,5 @@
-import { data } from "../../../data/profile/MusicData";
+import { albumsData } from "../../../data/profile/MusicData";
 
-const { albumsData } = data;
 const albumsListReducer = (state = albumsData, action) => {
     switch(action.type) {
         case "REMOVE_ALBUM":

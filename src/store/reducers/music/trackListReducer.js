@@ -1,6 +1,5 @@
-import { data } from "../../../data/profile/MusicData";
+import { tracksData } from "../../../data/profile/MusicData";
 
-const { tracksData } = data;
 const tracksListReducer = (state = tracksData, action) => {
     switch(action.type) {
         case "REMOVE_TRACK":

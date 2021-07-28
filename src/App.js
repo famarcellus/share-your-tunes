@@ -2,7 +2,7 @@ import './App.scss';
 import { Navbar } from "./components/navbar/Navbar";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom"; 
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"; 
 import React from 'react';
 import { Spin, Result, Button } from "antd";
 import routes from './routes';
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Router>
-          <Navbar Link={Link} location={useLocation}/>
+          <Navbar Link={Link}/>
           <React.Suspense fallback={<Spin />}>
             <Switch>
               {routes.map((route, idx) => {

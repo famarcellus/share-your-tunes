@@ -33,17 +33,17 @@ function MusicInterests() {
             <Tabs defaultActiveKey="artists">
                 <TabPane className="artists-section sub-section" tab="Artists" key="artists">
                     {artistsList.length !== 0 ? artistsList.map((item, index) => {
-                        return (<Artist artist={item.artist} imgSrc={item.src} artistsList={artistsList} index={index} removeFn={RemoveItem} removeArtist={removeArtist} />)
+                        return (<Artist key={item.artist} artist={item.artist} imgSrc={item.src} artistsList={artistsList} index={index} removeFn={RemoveItem} removeArtist={removeArtist} />)
                     }) : <h2 className="empty-artists empty">No artists added yet!</h2> }
                 </TabPane>
                 <TabPane className="tracks-section sub-section" tab="Tracks" key="tracks">
                     {tracksList.length !== 0 ? tracksList.map((item, index) => {
-                        return (<Track artist={item.artist} trackName={item.trackName} imgSrc={item.imgSrc} tracksList={tracksList} index={index} removeFn={RemoveItem} removeTrack={removeTrack} />)
+                        return (<Track key={item.artist} artist={item.artist} trackName={item.trackName} imgSrc={item.imgSrc} tracksList={tracksList} index={index} removeFn={RemoveItem} removeTrack={removeTrack} />)
                     }) : <h2 className="empty-tracks empty">No tracks added yet!</h2> }
                 </TabPane>
                 <TabPane className="albums-section sub-section" tab="Albums" key="albums">
                     {albumsList.length !== 0 ? albumsList.map((item, index) => {
-                        return (<Album artist={item.artist} albumName={item.albumName} imgSrc={item.imgSrc} albumsList={albumsList} index={index} removeFn={RemoveItem} removeAlbum={removeAlbum} />)
+                        return (<Album key={item.artist} artist={item.artist} albumName={item.albumName} imgSrc={item.imgSrc} albumsList={albumsList} index={index} removeFn={RemoveItem} removeAlbum={removeAlbum} />)
                     }) : <h2 className="empty-albums empty">No albums added yet!</h2> }
                 </TabPane>
             </Tabs>

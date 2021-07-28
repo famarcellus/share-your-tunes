@@ -80,7 +80,7 @@ export function KeepButtonsVisible(xRef, checkRef) {
 }
 
 
-export function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
+export function ChangeImage(imageFile, setImageFn, userDataObj, setImageExistsFn) {
     const { message } = require("antd");
     
     if(!imageFile) {
@@ -91,7 +91,7 @@ export function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
     // Image isn't actually uploaded, this code ensures message is only displayed once
     if(imageFile.file.status === "error") {
         let url = URL.createObjectURL(imageFile.file.originFileObj);
-        setImageFn(url);
+        setImageFn({...userDataObj, imgSrc: url});
         setImageExistsFn(true);
         message.success("Succesfully added NEW profile picture!");
         return;
@@ -100,7 +100,6 @@ export function ChangeImage(imageFile, setImageFn, setImageExistsFn) {
 
 export function BeforeUpload(file) {
     const { message } = require("antd");
-    console.log(`Before Upload File: ${file}`);
 
     const isJpgOrPng = file.type === "image/jpeg"|| file.type === "image/png";
     if(!isJpgOrPng) {
@@ -114,10 +113,10 @@ export function BeforeUpload(file) {
     return isJpgOrPng && isLess2M;
 }
 
-export function RemoveImage(setImageFn, setImageExistsFn) {
+export function RemoveImage(setImageFn, userDataObj, setImageExistsFn) {
     const { message } = require("antd");
     message.success("Successfully removed your profile picture!");
-    setImageFn(null);
+    setImageFn({...userDataObj, imgSrc: ""});
     setImageExistsFn(false);
 }
 
@@ -159,9 +158,125 @@ export function CalculateData(artistList, trackList, albumList) {
 }
 /********* MusicInterests component functions ENDS *********/
 
+/********* Friends component functions BEGINS *********/
 export function Unblock(blockList, index, unblockUserFn) {
     const { message } = require("antd");
     message.success(`Successfully unblocked "${blockList[index]}"`);
     const updatedList = RemoveItem(blockList, index);
     unblockUserFn(updatedList);
 }
+
+export function RemoveFriendFromList(friendsList, idx, name) {
+    const updatedList = RemoveItem(friendsList, idx);
+    return updatedList;
+}
+
+export function AddToBlockList(blockList, name){
+    const newBlockList = blockList.slice();
+    newBlockList.push(name);
+    return newBlockList;
+}
+
+/********* Friends component functions ENDS *********/
+
+/********* Posts component functions BEGINS *********/
+
+export function DisplayRelativeTime(date, currentDate) {
+    const { formatDistance } = require("date-fns");
+    return formatDistance(date, currentDate, { addSuffix: true }).toString();
+}
+
+export function generatedId() {
+    const min = Math.ceil(1);
+    const max = Math.floor(20000);
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+export function findNameInObject(targetName, array) {
+    if(array.length > 0) {
+        for(const person of array) {
+            for(const key of Object.keys(person)) {
+                if(person[key] === targetName) {
+                    return Object.create(person);
+                }
+            }
+        }
+    }
+    
+    return null;
+}
+
+export function UpdatePostLikes(sourceObj, allPostsArray, targetIndex) {
+    const copyForPosts = allPostsArray.slice();
+    if(sourceObj.likedByUser) {
+        copyForPosts[targetIndex] = {...sourceObj, likedByUser: false, likes: sourceObj.likes - 1};
+    }
+    if(!sourceObj.likedByUser) {
+        copyForPosts[targetIndex] = {...sourceObj, likedByUser: true, likes: sourceObj.likes + 1};
+    }
+    return copyForPosts;
+}
+
+export function UpdateCommentLikes(sourceObj, allPostsArray, targetIndex) {
+    const copyForComments = allPostsArray.slice();
+    const postIndex = allPostsArray.findIndex(post => post.postId === sourceObj.postId);
+    let targetComment = copyForComments[postIndex].comments[targetIndex];
+
+    if(targetComment.likedByUser) {
+        copyForComments[postIndex].comments[targetIndex]= {...targetComment, likedByUser: false, likes: targetComment.likes - 1};
+    }
+    if(!targetComment.likedByUser) {
+        copyForComments[postIndex].comments[targetIndex]= {...targetComment, likedByUser: true, likes: targetComment.likes + 1}
+    }
+    return copyForComments;    
+}
+
+
+export function RemovePost(allPosts, idx) {
+    const { message } = require("antd");
+    message.success(`Removed post`);
+    const updatedList = RemoveItem(allPosts, idx);
+    return updatedList;
+}
+
+export function AddPost(allPosts, value, userData) {
+    const { formatRelative } = require("date-fns");
+    const timePosted = formatRelative(new Date(), new Date());
+    const relativeTime = DisplayRelativeTime(new Date(), new Date());
+    const updatedList = allPosts.slice();
+    updatedList.unshift({
+        poster: userData.name,
+        avatar: userData.imgSrc,
+        content: value,
+        timePosted: timePosted.toString(),
+        relativeTime: relativeTime.toString(),
+        likes: 0,
+        likedByUser: false, 
+        comments: [],
+        postId: generatedId(),
+        postCreatorId: userData.userId
+    });
+    return updatedList;
+}
+
+export function AddComment(allPosts, value, userData, idx) {
+    const { formatRelative } = require("date-fns");
+    const timePosted = formatRelative(new Date(), new Date());
+    const relativeTime = DisplayRelativeTime(new Date(), new Date());
+    const updatedList = allPosts.slice();
+    updatedList[idx].comments.unshift({
+        commenter: userData.name,
+        avatar: userData.imgSrc,
+        content: value,
+        timePosted: timePosted.toString(),
+        relativeTime: relativeTime.toString(),
+        likes: 0,
+        likedByUser: false, 
+        commentId: generatedId(),
+    });
+    console.log(updatedList);
+    return updatedList;
+}
+
+/********* Posts component functions ENDS *********/
+

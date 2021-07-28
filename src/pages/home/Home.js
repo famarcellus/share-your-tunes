@@ -1,8 +1,13 @@
 import React from "react";
 import "./Home.scss";
+import FeedPosts from "../../components/posts/feed_posts/FeedPosts";
 
 function Home() {
-    return (<h1>Home Page</h1>)
+    return (
+        <main className="home-page page">
+            <FeedPosts />
+        </main>
+    )
 }
 
 export default Home;
