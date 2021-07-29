@@ -1,0 +1,34 @@
+.music-result-card {
+    display: inline-block;
+    width: 40%;
+    // width: 120px;
+    margin: 8px 15px;
+
+    .ant-card-body {
+        padding: 10px;
+    }
+
+    .ant-card-cover > * {
+        display: block;
+        // width: 120px;
+        // height: 0;
+        // padding-bottom: 100%;
+    }
+
+    // .image {
+    //     height: 0;
+    //     padding-bottom: 100%;
+    // }
+
+    .ant-card-meta-detail, .ant-card-meta-title {
+        overflow: initial;
+        text-overflow: initial;
+        white-space: initial;
+    }
+
+    .audio {
+        width: 100%;
+    }
+
+    
+}

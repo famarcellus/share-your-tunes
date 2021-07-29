@@ -1,8 +1,13 @@
 import React from "react";
 import "./Music.scss";
+import SearchMusic from "../../components/search_music/SearchMusic";
 
 function Music() {
-    return (<h1>Music Page</h1>)
+    return (
+        <main className="music-page page">
+            <SearchMusic/>
+        </main>
+    )
 }
 
 export default Music;

@@ -7,6 +7,15 @@ export const removeArtist = (list) => {
     }
 }
 
+export const AddArtist = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "ADD_ARTIST",
+            payload: list
+        });
+    }
+}
+
 export const removeTrack = (list) => {
     return (dispatch) => {
         dispatch({
@@ -16,10 +25,28 @@ export const removeTrack = (list) => {
     }
 }
 
+export const AddTrack = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "ADD_TRACK",
+            payload: list
+        });
+    }
+}
+
 export const removeAlbum = (list) => {
     return (dispatch) => {
         dispatch({
             type: "REMOVE_ALBUM",
+            payload: list
+        });
+    }
+}
+
+export const AddAlbum = (list) => {
+    return (dispatch) => {
+        dispatch({
+            type: "ADD_ALBUM",
             payload: list
         });
     }

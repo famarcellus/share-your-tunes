@@ -68,17 +68,12 @@ export const tracksData = [
         trackName: "Everybody Loves The Sunshine",
         imgSrc: "https://cdns-images.dzcdn.net/images/cover/d340020de3f14efb249ff4b61dd63c47/120x120-000000-80-0-0.jpg"
     },
-    {
-        artist: "Lil Nas X",
-        trackName: "Old Town Road",
-        imgSrc: "https://cdns-images.dzcdn.net/images/cover/3cfd6900fd2b342ec0e478faf300f6a2/120x120-000000-80-0-0.jpg"
-    },
 ];
 
 export const albumsData = [
     {
         artist: "Drake",
-        albumName: "Nothing Was the Same",
+        albumName: "Nothing Was The Same",
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp5ytnrEInKmssaJwmfRRsZDIrojOtI3eD9A&usqp=CAU"
     },
     {
@@ -93,7 +88,7 @@ export const albumsData = [
     },
     {
         artist: "Drake",
-        albumName: "Views from the 6",
+        albumName: "Views",
         imgSrc: "https://thefader-res.cloudinary.com/private_images/w_640,c_limit,f_auto,q_auto:eco/Cg2YkksWMAACMbv_momzvl/drake-views-from-the-6-artwork.jpg"
     },
     {
@@ -103,7 +98,7 @@ export const albumsData = [
     },
     {
         artist: "Pharrell Williams",
-        albumName: "GIRL",
+        albumName: "G I R L",
         imgSrc: "https://images-na.ssl-images-amazon.com/images/I/71KAQexjuuL._SL1500_.jpg"
     },
 ];
