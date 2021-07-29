@@ -15,7 +15,9 @@ function App() {
       <Provider store={store}>
         <Router>
           <Navbar Link={Link}/>
-          <React.Suspense fallback={<Spin />}>
+          <React.Suspense fallback={
+              <div className="loading"><Spin size="large"/></div>
+            }>
             <Switch>
               {routes.map((route, idx) => {
                 return (

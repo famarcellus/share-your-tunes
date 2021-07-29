@@ -81,13 +81,13 @@ function Posts({ allPosts, poster, avatar, content, timePosted, relativeTime, li
             {postCreatorId === userData.userId ?
             <Menu.Item key="0">
                 <Popconfirm className="trash-option" title="Are you sure?" okText="Yes" cancelText="No" onConfirm={(e) => (HandlePostRemoval(e, allPosts, index, removePost))}>
-                        <Button type="link" danger block={true}>Remove Post<img className="trash-icon" src={TrashIcon} width="18px" height="18px" alt="Trash icon"></img></Button>
+                        <Button type="link" danger block={true} size="small">Remove Post<img className="trash-icon" src={TrashIcon} width="18px" height="18px" alt="Trash icon"></img></Button>
                 </Popconfirm>
             </Menu.Item> 
              : 
             <Menu.Item key="0">
                 <Popconfirm className="block-option" title="Are you sure?" okText="Yes" cancelText="No" onConfirm={(e) => HandleBlockUser(e, allPosts, index, friendsList, removePost, removeFriend, blockUser, blockList)}>
-                        <Button type="link" danger block={true}>Block This User<img className="block-icon" src={BlockUserIcon} width="25px" height="25px" alt="Block icon"></img></Button>
+                        <Button type="link" danger block={true} size="small">Block This User<img className="block-icon" src={BlockUserIcon} width="25px" height="25px" alt="Block icon"></img></Button>
                 </Popconfirm>
             </Menu.Item>}
         </Menu>

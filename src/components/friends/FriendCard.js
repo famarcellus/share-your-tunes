@@ -45,13 +45,13 @@ function FriendCard({ name, imgSrc, index }) {
             <Menu.Item key="0">
                 <Popconfirm className="trash-option" title="Are you sure?" okText="Yes" cancelText="No" 
                 onConfirm={(e) => HandleFriendRemoval(e, friendsList, index, removeFriend, name)}>
-                        <Button type="link" danger block={true}>Remove Friend<img className="trash-icon" src={TrashIcon} width="18px" height="18px" alt="Trash Icon"></img></Button>
+                        <Button type="link" danger block={true} size="small">Remove Friend<img className="trash-icon" src={TrashIcon} width="18px" height="18px" alt="Trash Icon"></img></Button>
                 </Popconfirm>
             </Menu.Item>
             <Menu.Item key="1">
                 <Popconfirm className="block-option" title="Are you sure?" okText="Yes" cancelText="No" 
                 onConfirm={(e) => HandleBlockUser(e, blockList, blockUser, friendsList, name, removeFriend, index)}>
-                        <Button type="link" danger block={true}>Block User<img className="block-icon" src={BlockUserIcon} width="25px" height="25px" alt="Block Icon"></img></Button>
+                        <Button type="link" danger block={true} size="small">Block User<img className="block-icon" src={BlockUserIcon} width="25px" height="25px" alt="Block Icon"></img></Button>
                 </Popconfirm>
             </Menu.Item>
         </Menu>

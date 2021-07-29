@@ -71,6 +71,39 @@ const allPosts = [
         postId: 3191,
         postCreatorId: stephenData.userId
     }, 
+    {
+        poster: tonyData.name,
+        avatar: tonyData.imgSrc,
+        content: "Just found my old iphone shuffle in a random box in my house. Good memories haha",
+        timePosted: sub(currentDate, {hours: 8, minutes: 36}),
+        relativeTime: "",
+        likes: 14,
+        likedByUser: false,
+        comments: [
+            {
+                commenter: wandaData.name,
+                avatar: wandaData.imgSrc,
+                content: "lol yeah the good old days",
+                timePosted: sub(currentDate, { hours: 9, minutes: 1 }),
+                relativeTime: "",
+                likes: 4,
+                likedByUser: false,
+                commentId:  1293
+            },
+            {
+                commenter: peterData.name,
+                avatar: peterData.imgSrc,
+                content: "Haha wow, I bet your music taste is way different from now",
+                timePosted: sub(currentDate, { hours: 10, minutes: 45 }),
+                relativeTime: "",
+                likes: 2,
+                likedByUser: false,
+                commentId:  41728
+            }
+        ],
+        postId: 57103,
+        postCreatorId: tonyData.userId
+    }
     
 ];
 
