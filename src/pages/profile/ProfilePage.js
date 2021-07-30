@@ -8,10 +8,15 @@ import ProfilePosts from "../../components/posts/profile_posts/ProfilePosts";
 function ProfilePage() {
     return (
         <main className="profile-page page">
-            <UserInfo />
-            <MusicInterests />
-            <Friends />
-            <ProfilePosts />
+            <div className="left-side">
+                <UserInfo />
+                <MusicInterests />
+                <Friends />
+            </div>
+            <div className="right-side">
+                <ProfilePosts />
+            </div>
+            
         </main>
     )
 }

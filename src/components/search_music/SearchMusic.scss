@@ -4,9 +4,10 @@
     align-items: center;
     flex-flow: column;
 
-    // .search-bar {
-    //     width: 100%;
-    // }
+    .search-bar {
+        width: 85%;
+    }
+    
     .explanation {
         margin-top: 20px;
         width: 250px;
@@ -15,6 +16,16 @@
     .results-section {
         display: flex;
         flex-flow: row wrap;
+        justify-content: center;
+        align-self: center;
         margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: 448px) {
+    .search-section {
+        .search-bar {
+            width: 342px;
+        }
     }
 }

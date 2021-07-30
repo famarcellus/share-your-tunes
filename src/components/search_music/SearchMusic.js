@@ -79,8 +79,7 @@ function SearchMusic() {
     ]);
     const dispatch = useDispatch()
     const { AddArtist, AddTrack, AddAlbum } = bindActionCreators(actionCreators, dispatch);
-    console.log(results);
-    
+
 
     function onSearch() {
         axios.request({...options, params: {q: searchVal}})

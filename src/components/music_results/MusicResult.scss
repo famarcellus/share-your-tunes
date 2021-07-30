@@ -1,8 +1,8 @@
 .music-result-card {
     display: inline-block;
-    width: 40%;
-    // width: 120px;
+    width: 50%;
     margin: 8px 15px;
+   
 
     .ant-card-body {
         padding: 10px;
@@ -10,25 +10,36 @@
 
     .ant-card-cover > * {
         display: block;
-        // width: 120px;
-        // height: 0;
-        // padding-bottom: 100%;
     }
 
-    // .image {
-    //     height: 0;
-    //     padding-bottom: 100%;
-    // }
-
     .ant-card-meta-detail, .ant-card-meta-title {
-        overflow: initial;
-        text-overflow: initial;
         white-space: initial;
+    }
+
+    .ant-card-meta-title {
+        height: 60px;
     }
 
     .audio {
         width: 100%;
     }
 
-    
+}
+
+@media only screen and (min-width: 350px) {
+    .music-result-card {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .music-result-card {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .music-result-card {
+        width: 160px;
+    }
 }
