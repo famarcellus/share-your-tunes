@@ -93,7 +93,7 @@ export function ChangeImage(imageFile, setImageFn, userDataObj, setImageExistsFn
         let url = URL.createObjectURL(imageFile.file.originFileObj);
         setImageFn({...userDataObj, imgSrc: url});
         setImageExistsFn(true);
-        message.success("Succesfully added NEW profile picture!");
+        message.success("Succesfully added NEW profile picture!", 3);
         return;
     }
 }

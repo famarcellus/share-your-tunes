@@ -74,7 +74,7 @@ function Posts({ allPosts, poster, avatar, content, timePosted, relativeTime, li
     const { blockUser, removeFriend } = bindActionCreators(actionCreators, dispatch);
 
 
-    const postObject = { poster, content, timePosted, relativeTime, likes, likedByUser, comments, postId };
+    const postObject = { poster, avatar, content, timePosted, relativeTime, likes, likedByUser, comments, postId };
 
     const menu = (
         <Menu>
