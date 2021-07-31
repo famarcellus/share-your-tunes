@@ -65,7 +65,7 @@ function UserInfo() {
                     <Button className="upload-button" type="primary" size="small" ghost>Change Profile Image</Button>
                 </Upload>
             </ImgCrop>
-            {profileImageExists && <Button type="primary" size="small" danger ghost onClick={() => {RemoveImage(updateUser, userData, setProfileImageExists)}}>Remove Image</Button>}
+            {userData.imgSrc && <Button type="primary" size="small" danger ghost onClick={() => {RemoveImage(updateUser, userData, setProfileImageExists)}}>Remove Image</Button>}
             <h1 className="user-name">Steve Rogers</h1>
             <div className="bio-section">
                 <h2 className="user-bio" data-testid="bio">
