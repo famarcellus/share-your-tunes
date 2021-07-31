@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Tune Share
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a music focused Social Media site that functions as a single page application. Features includes...
+    Searchable artists, tracks, and albums that can be added to user's profile page
+    Posting/Commenting system
+    Friend system
 
-## Available Scripts
+[https://tuneshare.netlify.app/](Live Website Link)
 
-In the project directory, you can run:
+## Home Page
 
-### `npm start`
+![screen-gif](./src/assets/readme/home_page.gif)
+Posts from other user's visible
+Can like post/comments and make comment
+Block user directly in more options menu
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Profile Page
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Displays info about the user
 
-### `npm test`
+### User Info
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![screen-gif](./src/assets/readme/profile_bio.gif)
+User's name and editable bio
 
-### `npm run build`
+![screen-gif](./src/assets/readme/profile_image.gif)
+User's editable profile picture (GIF doesn't show image file actually being chosen)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Music Interests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![screen-gif](./src/assets/readme/profile_music.gif)
+List of removable favorite artists, tracks, and albums. 
+Displays top 3 music interests in pie chart that updates automatically
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Friends
 
-### `npm run eject`
+![screen-gif](./src/assets/readme/friends_remove.gif)
+Removable friends
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![screen-gif](./src/assets/readme/friends_blockSystem.gif)
+Block/Unblock system
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Profile Posts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![screen-gif](./src/assets/readme/create_post.gif)
+User can add a post
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![screen-gif](./src/assets/readme/remove_post.gif)
+Profile owner can remove their own posts
 
-## Learn More
+## Music Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![screen-gif](./src/assets/readme/music_search.gif)
+Can search for artists, tracks, albums in search bar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![screen-gif](./src/assets/readme/music_add.gif)
+User can add their specified music interest to their profile page
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
