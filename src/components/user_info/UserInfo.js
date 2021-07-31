@@ -58,7 +58,6 @@ function UserInfo() {
 
     return (
         <section className="info-section">
-            {/* <img className="profile-pic" alt="Profile icon" src={!profileImageExists ? profileIcon : imgSrc}></img>  */}
             <img className="profile-pic" alt="Profile icon" src={!userData.imgSrc ? profileIcon : userData.imgSrc}></img> 
             <ImgCrop>
                 <Upload beforeUpload={BeforeUpload} showUploadList={false} onChange={(file) => ChangeImage(file, updateUser, userData, setProfileImageExists)}>
