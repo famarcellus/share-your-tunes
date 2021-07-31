@@ -70,7 +70,7 @@ function UserInfo() {
                 <h2 className="user-bio" data-testid="bio">
                     {bioValue}
                     <Tooltip title="Click to edit bio" color="blue">
-                        <img className="edit-button" src={editIcon} alt="Edit button" onClick={() => BioEditVisibility(bioRefArray, editIsVisible, setEditIsVisible)} data-testid="edit-button"></img>
+                        <img className="edit-button" src={editIcon} width="24px" height="26px" alt="Edit button" onClick={() => BioEditVisibility(bioRefArray, editIsVisible, setEditIsVisible)} data-testid="edit-button"></img>
                     </Tooltip>
                     </h2>
                 <div className="edit-section">
@@ -81,12 +81,12 @@ function UserInfo() {
                             {charactersLeft} characters remaining
                             <pre>
                                 <Tooltip title="Clear text" placement="bottom" color="red" onVisibleChange={() => KeepButtonsVisible(XMarkRef, CheckMarkRef)}>
-                                    <img className="x-mark not-visible" src={xMarkIcon} alt="X button" ref={XMarkRef} 
+                                    <img className="x-mark not-visible" src={xMarkIcon} alt="X button" ref={XMarkRef} width="24px" height="24px" 
                                         onClick={() => {ClearEditField(editValue, setEditValue, setCharactersLeft, CHAR_LIMIT)}} data-testid="x-mark">
                                     </img>
                                 </Tooltip>
                                 <Tooltip title="Apply changes" placement="bottom" color="green" onVisibleChange={() => KeepButtonsVisible(XMarkRef, CheckMarkRef)}>
-                                    <img className="check-mark not-visible" src={checkMarkIcon} alt="Check Mark button" ref={CheckMarkRef} 
+                                    <img className="check-mark not-visible" src={checkMarkIcon} alt="Check Mark button" ref={CheckMarkRef} width="24px" height="24px"
                                         onClick={(e) => {ApplyNewBio(editValue, setEditValue, bioValue, setBioValue, bioRefArray, setEditIsVisible, setCharactersLeft, CHAR_LIMIT)}}>
                                     </img>
                                 </Tooltip>                               

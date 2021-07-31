@@ -96,10 +96,10 @@ function Posts({ allPosts, poster, avatar, content, timePosted, relativeTime, li
     const postActions = [
         <Tooltip key="like-button" title="Like">
             <h4><img onClick={() => HandleLikes(postObject, updatePost, allPosts, "post", index)} className="upvote-icon action-icon"     
-            src={likedByUser ? UpvoteFilledIcon : UpvoteUnfilledIcon} alt="Likes icon"></img> {likes}</h4>
+            src={likedByUser ? UpvoteFilledIcon : UpvoteUnfilledIcon} alt="Likes icon" width="24px" height="24px"></img> {likes}</h4>
         </Tooltip>,
         <Tooltip key="comment-button" title="Comment">
-            <img className="comment-icon action-icon" onClick={() => setIsModalVisible(true)} src={CommentIcon} alt="Comment Icon"></img>
+            <img className="comment-icon action-icon" onClick={() => setIsModalVisible(true)} src={CommentIcon} alt="Comment Icon" width="24px" height="24px"></img>
         </Tooltip>,
         <Tooltip key="more-button" title="More options">
             <Dropdown overlay={menu} trigger={["click"]}>
@@ -145,7 +145,7 @@ function Posts({ allPosts, poster, avatar, content, timePosted, relativeTime, li
                             actions={
                             [<Tooltip key="like-button" title="Like">
                                 <h4><img onClick={() => HandleLikes(postObject, updatePost, allPosts, "comment", idx)} className="upvote-icon action-icon" 
-                                src={comment.likedByUser ? UpvoteFilledIcon : UpvoteUnfilledIcon} alt="Like Icon"></img> {comment.likes}</h4>
+                                src={comment.likedByUser ? UpvoteFilledIcon : UpvoteUnfilledIcon} alt="Like Icon" width="24px" height="24px"></img> {comment.likes}</h4>
                             </Tooltip>]}
                             author={<p>{comment.commenter}</p>}
                             avatar={

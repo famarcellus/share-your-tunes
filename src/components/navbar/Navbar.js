@@ -20,7 +20,7 @@ function Navbar({ Link }) {
         <header className="navbar">
             <Menu selectedKeys={pathname} mode="horizontal" overflowedIndicator={<HamburgerIcon />} triggerSubMenuAction="click">
                 <Menu.Item key="/profile" data-testid="profile">
-                    <img className="profile-image" src={!userData.imgSrc ? profileIcon : userData.imgSrc} width="30px" height="30px"></img>
+                    <img className="profile-image" src={!userData.imgSrc ? profileIcon : userData.imgSrc} width="30px" height="30px" alt="Profile Icon"></img>
                     <Link to="/profile">Profile</Link>
                 </Menu.Item>
                 <Menu.Item key="/" icon={<HomeIcon />} data-testid="home">
